@@ -1,0 +1,102 @@
+@page "/CustomerRegister"
+@using Paisa_Sanyojan.Services
+@inject CustomerServices.CustomerService customerService
+@inject NavigationManager NavigationManager
+<div class="container mt-5">
+    <h3>Register New Customer</h3>
+
+    <div class="mb-3">
+        <label for="newCustomerName" class="form-label">Name:</label>
+        <input id="newCustomerName" @bind="newCustomerName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label for="newCustomerPhoneNumber" class="form-label">Phone Number:</label>
+        <input id="newCustomerPhoneNumber" @bind="newCustomerPhoneNumber" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <button @onclick="RegisterCustomer" class="btn btn-primary">Register Customer</button>
+    </div>
+
+    <div class="mb-3">
+        <button @onclick="ReturnDashboard" class="btn btn-secondary">Return to Dashboard</button>
+    </div>
+
+    @if (successMessageStatus)
+    {
+        <div class="alert alert-success" role="alert">
+            @successMessage
+        </div>
+    }
+
+    @if (errorMessageStatus)
+    {
+        <div class="alert alert-danger" role="alert">
+            @errorMessage
+        </div>
+    }
+</div>
+
+
+@code {
+    string newCustomerName;
+    string newCustomerPhoneNumber;
+    string errorMessage;
+    bool errorMessageStatus = false;
+    bool successMessageStatus = false;
+    string successMessage = " ";
+
+    private void RegisterCustomer()
+    {
+        if (!string.IsNullOrWhiteSpace(newCustomerName) && !string.IsNullOrWhiteSpace(newCustomerPhoneNumber))
+        {
+            // Check if the customer already exists
+            var existingCustomer = customerService.GetCustomerByPhoneNumber(newCustomerPhoneNumber);
+
+            if (!existingCustomer)
+            {
+
+                customerService.CreateCustomer(newCustomerName, newCustomerPhoneNumber);
+                handleErrorMessage();
+                successMessageStatus = true;
+                successMessage = "Customer created successfully";
+
+            }
+            else
+            {
+                successMessageStatus = false;
+                errorMessageStatus = true;
+                errorMessage = "Phone Number already exists";
+            }
+        }
+        else
+        {
+            successMessageStatus = false;
+            errorMessageStatus = true;
+            errorMessage = "name and phone number are required";
+        }
+
+
+    }
+
+    private void ReturnDashboard()
+    {
+        NavigationManager.NavigateTo("/dashboard");
+    }
+
+    private void handleErrorMessage()
+    {
+        errorMessageStatus = false;
+        errorMessage = " ";
+    }
+
+    private void handleSuccessMessage()
+    {
+        successMessageStatus = false;
+        successMessage = " ";
+    }
+
+  
+
+}
