@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/roshangurung/RiderProjects/Paisa_Sanyojan/Paisa_Sanyojan/obj/Debug/net8.0-android/scopedcss/bundle/Paisa_Sanyojan.styles.css",
+      "PackagePath": "staticwebassets/Paisa_Sanyojan.styles.css"
+    },
+    {
+      "Id": "/Users/roshangurung/RiderProjects/Paisa_Sanyojan/Paisa_Sanyojan/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/Users/roshangurung/RiderProjects/Paisa_Sanyojan/Paisa_Sanyojan/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/roshangurung/RiderProjects/Paisa_Sanyojan/Paisa_Sanyojan/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/roshangurung/RiderProjects/Paisa_Sanyojan/Paisa_Sanyojan/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/roshangurung/RiderProjects/Paisa_Sanyojan/Paisa_Sanyojan/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.Paisa_Sanyojan.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.build.Paisa_Sanyojan.props",
+      "PackagePath": "build\\Paisa_Sanyojan.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.buildMultiTargeting.Paisa_Sanyojan.props",
+      "PackagePath": "buildMultiTargeting\\Paisa_Sanyojan.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.buildTransitive.Paisa_Sanyojan.props",
+      "PackagePath": "buildTransitive\\Paisa_Sanyojan.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
