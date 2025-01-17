@@ -1,0 +1,425 @@
+﻿@page "/Home"
+@using BisleriumCafe.Services;
+@using BisleriumCafe.Model;
+@inject NavigationManager NavManager
+@inject LoginService LoginService
+
+@if (isLoggedIn)
+{
+    <div class="main-content">
+        <h1>Dashboard</h1>
+        <p>Current Currency: @LoginService.Currency</p> <!-- Display selected currency -->
+
+        <div class="balance-box">
+            <p><strong>Current Balance:</strong> @userBalance @LoginService.Currency</p>
+        </div>
+        <div class="dashboard-boxes">
+        <!-- Transaction Metrics -->
+            <div class=" dashboard-box">
+            <p><strong>Total Transactions:</strong> @totalTransactions</p>
+            </div>
+            
+            <div class=" dashboard-box">
+            <p><strong>Total Inflows:</strong> @totalInflows</p>
+             </div>
+            <div class=" dashboard-box">
+            <p><strong>Total Outflows:</strong> @totalOutflows</p>
+            </div>
+            <div class=" dashboard-box">
+            <p><strong>Total Debt:</strong> @totalDebt</p>
+            </div>
+            <div class=" dashboard-box">
+            <p><strong>Cleared Debt:</strong> @clearedDebt</p>
+            </div>
+            <div class=" dashboard-box">
+            <p><strong>Remaining Debt:</strong> @remainingDebt</p>
+            </div>
+            <div class=" dashboard-box">
+            <p><strong>Highest Inflow:</strong> @highestInflow</p>
+            </div>
+            <div class=" dashboard-box">
+            <p><strong>Highest Outflow:</strong> @highestOutflow</p>
+            </div>
+            <div class=" dashboard-box">
+            <p><strong>Highest Debt:</strong> @highestDebt</p>
+            </div>
+        </div>
+    </div>
+    <!-- Pending Debts -->
+    <div class=" pending-debts">
+        <h2>Pending Debts</h2>
+        <ul>
+            @foreach (var debt in pendingDebts)
+            {
+                <li>@debt.Source - @debt.Amount  @LoginService.Currency </li>
+            }
+        </ul>
+
+    </div>
+        <!-- Filters -->
+        <div class="filters">
+            <label>Type:</label>
+            <select @bind="selectedType">
+                <option value="">All</option>
+                <option value="Income">Income</option>
+                <option value="Expenditure">Expenditure</option>
+                <option value="Debt">Debt</option>
+            </select>
+
+            <label>Tag:</label>
+            <input @bind="selectedTag" placeholder="Enter tag" />
+
+            <label>Date Range:</label>
+            <input type="date" @bind="startDate" /> to <input type="date" @bind="endDate" />
+
+            <button @onclick="ApplyFilters">Apply Filters</button>
+            <button @onclick="ClearFilters">Clear Filters</button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input @bind="searchQuery" placeholder="Search transactions by title" />
+            <button @onclick="SearchTransactions">Search</button>
+        </div>
+
+        <!-- Transactions Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th @onclick="SortBySource">Source</th>
+                <th @onclick="SortByAmount">Amount  @LoginService.Currency</th>
+                    <th @onclick="SortByDate">Date</th>
+                    <th>Type</th>
+                    <th>Tag</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var transaction in filteredTransactions)
+                {
+                    <tr>
+                        <td>@transaction.Source</td>
+                        <td>@transaction.Amount</td>
+                        <td>@transaction.Date.ToShortDateString()</td>
+                        <td>@transaction.Type</td>
+                        <td>@transaction.Tag</td>
+                        <td>@transaction.Note</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+       
+}
+else
+{
+    <p>You must be logged in to view this page. Redirecting to login...</p>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #4a4a4a;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        font-style: italic;
+        color: #6b6b6b;
+    }
+
+    .dashboard-boxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .dashboard-box {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        .dashboard-box h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .dashboard-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .dashboard-box:hover {
+            background-color: #f0f8ff; /* Light blue shade */
+            color: #0078d4; /* Blue text */
+        }
+
+    .balance-box {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+        .balance-box p {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 20px;
+        height: 60%; /* Reduced height */
+    }
+
+        .filters label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+    input,
+    select {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        color: #333;
+        outline: none;
+        background: #f9f9f9;
+    }
+
+        input:focus,
+        select:focus {
+            border-color: #0078d4;
+            box-shadow: 0 0 5px rgba(0, 120, 212, 0.4);
+        }
+
+    button {
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background: #0078d4;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background: #005a9e;
+        }
+
+        button:active {
+            background: #00447c;
+        }
+
+    .table th {
+        color: #333; /* Ensure visibility */
+        cursor: pointer;
+    }
+
+        .table th:hover {
+            color: #0078d4; /* Hover effect for headers */
+        }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .table tr:hover {
+            background: #f9f9f9;
+        }
+
+    .pending-debts {
+        margin: 30px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Center text inside */
+        width: 80%; /* Adjust width */
+        max-width: 600px; /* Max width for larger screens */
+    }
+
+        .pending-debts h2 {
+            color: #333; /* Default color */
+            margin-bottom: 15px;
+            transition: color 0.3s ease; /* Smooth hover transition */
+        }
+
+            .pending-debts h2:hover {
+                color: #0078d4; /* Blue on hover */
+            }
+
+        .pending-debts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pending-debts li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333; /* Default color */
+            transition: color 0.3s ease; /* Smooth hover effect */
+        }
+
+            .pending-debts li:hover {
+                color: #0078d4; /* Blue text on hover */
+            }
+
+
+</style>
+@code {
+    private bool isLoggedIn = false;
+
+    private void SortBySource()
+    {
+        SortTransactions("source");
+    }
+
+    private void SortByAmount()
+    {
+        SortTransactions("amount");
+    }
+
+    private void SortByDate()
+    {
+        SortTransactions("date");
+    }
+
+    // Metrics
+    private int totalTransactions;
+    private double totalInflows, totalOutflows, totalDebt, clearedDebt, remainingDebt;
+    private double highestInflow, highestOutflow, highestDebt;
+    private double userBalance;
+
+    // Filters
+    private string selectedType = "";
+    private string selectedTag = "";
+    private string searchQuery = "";
+    private DateOnly? startDate;
+    private DateOnly? endDate;
+
+    // Transactions
+    private List<Transaction> transactions = new();
+    private List<Transaction> filteredTransactions = new();
+    private List<Transaction> pendingDebts = new();
+
+    protected override void OnInitialized()
+    {
+        isLoggedIn = LoginService.IsLoggedIn;
+
+        if (!isLoggedIn)
+        {
+            NavManager.NavigateTo("/");
+            return;
+        }
+
+        // Load transactions (replace with actual service call)
+        transactions = Management_List.GetAllTransactions();
+
+        UpdateMetrics();
+        filteredTransactions = transactions;
+    }
+
+    private void UpdateMetrics()
+    {
+        totalTransactions = transactions.Count;
+        totalInflows = transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+        totalOutflows = transactions.Where(t => t.Type == "Expenditure").Sum(t => t.Amount);
+        totalDebt = transactions.Where(t => t.Type == "Debt").Sum(t => t.Amount);
+        clearedDebt = transactions.Where(t => t.Type == "Debt" && t.IsCleared).Sum(t => t.Amount);
+        remainingDebt = totalDebt - clearedDebt;
+
+        highestInflow = transactions.Where(t => t.Type == "Income").Max(t => t.Amount);
+        highestOutflow = transactions.Where(t => t.Type == "Expenditure").Max(t => t.Amount);
+        highestDebt = transactions.Where(t => t.Type == "Debt").Max(t => t.Amount);
+
+        pendingDebts = transactions.Where(t => t.Type == "Debt" && !t.IsCleared).ToList();
+
+        userBalance = totalInflows - totalOutflows + (totalDebt - clearedDebt);
+
+    }
+
+    private void ApplyFilters()
+    {
+        filteredTransactions = transactions;
+
+        if (!string.IsNullOrEmpty(selectedType))
+            filteredTransactions = filteredTransactions.Where(t => t.Type == selectedType).ToList();
+
+        if (!string.IsNullOrEmpty(selectedTag))
+            filteredTransactions = filteredTransactions.Where(t => t.Tag?.Contains(selectedTag, StringComparison.OrdinalIgnoreCase) == true).ToList();
+
+        if (startDate.HasValue)
+            filteredTransactions = filteredTransactions.Where(t => t.Date >= startDate.Value).ToList();
+
+        if (endDate.HasValue)
+            filteredTransactions = filteredTransactions.Where(t => t.Date <= endDate.Value).ToList();
+    }
+
+    private void ClearFilters()
+    {
+        selectedType = "";
+        selectedTag = "";
+        startDate = null;
+        endDate = null;
+        filteredTransactions = transactions;
+    }
+
+    private void SearchTransactions()
+    {
+        filteredTransactions = filteredTransactions.Where(t => t.Source.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+    }
+
+    private void SortTransactions(string property)
+    {
+        switch (property)
+        {
+            case "source":
+                filteredTransactions = filteredTransactions.OrderBy(t => t.Source).ToList();
+                break;
+            case "amount":
+                filteredTransactions = filteredTransactions.OrderBy(t => t.Amount).ToList();
+                break;
+            case "date":
+                filteredTransactions = filteredTransactions.OrderBy(t => t.Date).ToList();
+                break;
+        }
+    }
+}

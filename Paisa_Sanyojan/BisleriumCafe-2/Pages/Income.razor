@@ -1,0 +1,250 @@
+﻿@page "/Income"
+@inject NavigationManager NavManager
+
+<div class="main-content">
+    <h1>Income Management</h1>
+
+    <!-- Button to Open Modal -->
+    <button class="open-form-button" @onclick="ShowAddIncomeModal">+ Add Transaction</button>
+
+    <!-- Add Income Modal -->
+    @if (showModal)
+    {
+        <div class="popup-form-overlay">
+            <div class="popup-form">
+                <h3>Add Cash Income</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="text" @bind="Amount" name="amount" placeholder="Enter amount" />
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" @bind="Date" name="date" />
+
+                        <label for="source">Source:</label>
+                        <input type="text" @bind="Source" name="source" placeholder="Enter source" />
+                    </div>
+                    <div class="form-group">
+                        <label for="tag">Tag:</label>
+                        <select @bind="Tag">
+                            <option value="" disabled selected>Select tag</option>
+                            @foreach (var i in Management_List.tgs)
+                            {
+                                <option value="@i.Name">@i.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note:</label>
+                        <textarea id="note" @bind="Note" placeholder="Enter additional notes"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="submit-button" @onclick="submit_button">Add Income</button>
+                        <button type="button" class="cancel-button" @onclick="HideAddIncomeModal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+
+    <!-- Income Table -->
+    <h3>Income Records</h3>
+    @if (Management_List.incomeList.Count > 0)
+    {
+        <table class="expense-table">
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Tag</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var income in Management_List.incomeList)
+                {
+                    <tr>
+                        <td>@income.Source</td>
+                        <td>@income.Amount</td>
+                        <td>@income.Date.ToShortDateString()</td>
+                        <td>@income.Tag</td>
+                        <td>@income.Note</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No income records added yet.</p>
+    }
+</div>
+
+<style>
+    .main-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .open-form-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #0078d4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .open-form-button:hover {
+            background-color: #005a9e;
+        }
+
+    .popup-form-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 500px;
+        max-height: 75%;
+        overflow-y: auto;
+    }
+
+        .popup-form h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .submit-button:hover {
+            background-color: #218838;
+        }
+
+    .cancel-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .cancel-button:hover {
+            background-color: #c82333;
+        }
+
+    .expense-table {
+        margin: 20px auto;
+        width: 90%;
+        max-width: 800px;
+        border-collapse: collapse;
+    }
+
+        .expense-table th, .expense-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .expense-table th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .expense-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+</style>
+
+@code {
+    private bool showModal = false;
+
+    double Amount;
+    DateOnly Date;
+    string Source;
+    string Tag;
+    string Note;
+
+    private void ShowAddIncomeModal()
+    {
+        showModal = true;
+    }
+
+    private void HideAddIncomeModal()
+    {
+        showModal = false;
+        ClearForm();
+    }
+
+    private void ClearForm()
+    {
+        Amount = 0;
+        Date = default;
+        Source = string.Empty;
+        Tag = string.Empty;
+        Note = string.Empty;
+    }
+
+    public void submit_button()
+    {
+        incomes income = new(Amount, Tag, Date, Note, Source);
+        Management_List.incomeList.Add(income);
+        jsonController.AddDataToJSONFile(Management_List.incomeList, jsonController.IncomeFile);
+        HideAddIncomeModal(); // Close modal after submission
+    }
+}

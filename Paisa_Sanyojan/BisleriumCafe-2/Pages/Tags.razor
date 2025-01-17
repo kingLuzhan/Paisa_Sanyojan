@@ -1,0 +1,189 @@
+﻿@page "/Tags"
+
+<div class="main-content">
+    <h1>Tag Management</h1>
+
+    <!-- Input Field for Tag -->
+    <div class="tag-form">
+        <input type="text" @bind="TagName" placeholder="Enter new tag name" />
+        <button class="add-tag-button" @onclick="AddTag">+ Add Tag</button>
+    </div>
+
+    <!-- Success Message Popup -->
+    @if (showSuccessMessage)
+    {
+        <div class="success-message">
+            <p>Tag successfully added!</p>
+            <button class="close-message" @onclick="HideSuccessMessage">✖</button>
+        </div>
+    }
+
+    <!-- Tag List -->
+    <h2>Existing Tags</h2>
+    @if (Management_List.tgs.Count > 0)
+    {
+        <ul class="tag-list">
+            @foreach (var tag in Management_List.tgs)
+            {
+                <li>@tag.Name</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No tags added yet.</p>
+    }
+</div>
+
+<style>
+    /* Main Content Styling */
+    .main-content {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Tag Form Styling */
+    .tag-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+        .tag-form input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 70%;
+        }
+
+    .add-tag-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .add-tag-button:hover {
+            background-color: #218838;
+        }
+
+    /* Success Message Popup */
+    .success-message {
+        position: fixed;
+        top: 20%;
+        right: 20px;
+        background-color: #28a745;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: fade-in 0.5s ease;
+    }
+
+        .success-message p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+    .close-message {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    /* Tag List Styling */
+    .tag-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+        .tag-list li {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            color: #333;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+        }
+
+    /* Animation */
+    @@keyframes fade-in {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+</style>
+
+@code {
+    private string TagName { get; set; } = string.Empty;
+    private bool showSuccessMessage = false;
+
+    // Add a new tag
+    private void AddTag()
+    {
+        if (!string.IsNullOrWhiteSpace(TagName))
+        {
+            Management_List.AddTag(TagName); // Add the tag and save it
+            TagName = string.Empty;
+            ShowSuccessMessage();
+        }
+    }
+
+    // Show success message after adding a tag
+    private void ShowSuccessMessage()
+    {
+        showSuccessMessage = true;
+        StateHasChanged();
+
+        // Automatically hide the message after 3 seconds
+        Task.Delay(3000).ContinueWith(_ =>
+        {
+            showSuccessMessage = false;
+            InvokeAsync(StateHasChanged);
+        });
+    }
+
+    // Hide success message
+    private void HideSuccessMessage()
+    {
+        showSuccessMessage = false;
+    }
+
+    // Load tags when the page initializes
+    protected override void OnInitialized()
+    {
+        // Load the tags from the file whenever the page is initialized
+        Management_List.tgs = Management_List.LoadTagsFromFile();
+    }
+}

@@ -1,0 +1,280 @@
+﻿
+@page "/Debt"
+@using System.Text.Json
+
+<div class="main-content">
+    <button class="add-debt-btn" @onclick="OpenAddDebtModal">Add Cash Debt</button>
+
+    <!-- Debt List Table -->
+    <h2>Debt List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Source</th>
+                <th>Tag</th>
+                <th>Notes</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var debt in Management_List.debtList)
+            {
+                <tr>
+                    <td>@debt.Amount</td>
+                    <td>@debt.Date</td>
+                    <td>@debt.Source</td>
+                    <td>@debt.Tag</td>
+                    <td>@debt.Note</td>
+                    <td>@(debt.IsCleared ? "Cleared" : "Pending")</td>
+                    <td>
+                        @if (!debt.IsCleared)
+                        {
+                            <button @onclick="() => ClearDebt(debt.Amount, debt)">Clear Debt</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal to Add Debt -->
+    @if (showAddDebtModal)
+    {
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close" @onclick="CloseAddDebtModal">&times;</span>
+                <h3>Add Debt</h3>
+                <form class="income-form" @onsubmit="submit_button">
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="text" @bind="amount" name="amount" placeholder="Enter amount" />
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" @bind="date" name="date" />
+                        <label for="source">Source:</label>
+                        <input type="text" @bind="source" name="source" placeholder="Enter source" />
+                        <label for="note">Add Notes:</label>
+                        <textarea id="note" @bind="note" placeholder="Enter additional notes"></textarea>
+                    </div>
+                    <select @bind="tag">
+                        @foreach (var i in Management_List.tgs)
+                        {
+                            <option value="@i.Name">@i.Name</option>
+                        }
+                    </select>
+                    <button type="submit">Add Debt</button>
+                </form>
+            </div>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(successMessage))
+    {
+        <p class="success-message">@successMessage</p>
+    }
+</div>
+
+<style>
+    /* Common Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    /* Button to Add Debt */
+    .add-debt-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .add-debt-btn:hover {
+            background-color: #45a049;
+        }
+
+    /* Modal Styles */
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    /* Form and Buttons */
+    .income-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    input[type="text"], input[type="date"], textarea {
+        padding: 8px;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    select {
+        padding: 8px;
+        width: 100%;
+    }
+
+    .success-message {
+        color: green;
+        margin-top: 10px;
+    }
+
+</style>
+
+@code {
+    int amount;
+    DateTime date;
+    string source;
+    string tag;
+    string note;
+    string successMessage;
+    bool showAddDebtModal = false;
+
+    // Method to open the Add Debt Modal
+    public void OpenAddDebtModal()
+    {
+        showAddDebtModal = true;
+    }
+
+    // Method to close the Add Debt Modal
+    public void CloseAddDebtModal()
+    {
+        showAddDebtModal = false;
+    }
+
+    // Method to add debt
+    public void submit_button()
+    {
+        // Validate tag
+        if (string.IsNullOrWhiteSpace(tag))
+        {
+            successMessage = "Please select a valid tag.";
+            return;
+        }
+
+        // Convert DateTime to DateOnly
+        DateOnly dateOnly = DateOnly.FromDateTime(date);
+
+        // Create a new debt object
+        debt debts = new debt(amount, tag, dateOnly, note, source);
+
+        // Add to the debt list
+        Management_List.debtList.Add(debts);
+
+        // Save to JSON file using System.Text.Json
+        SaveDebtsToFile();
+
+        successMessage = "Debt added successfully!";
+        CloseAddDebtModal();
+    }
+
+    // Method to clear debt with income validation
+    public void ClearDebt(int debtAmount, debt currentDebt)
+    {
+        // Retrieve the total income (you would need a function to calculate the total income)
+        double totalIncome = CalculateTotalIncome();
+
+        if (debtAmount <= totalIncome)
+        {
+            // Proceed with clearing the debt (decrease the income by the debt amount)
+            totalIncome -= debtAmount;
+
+            // Mark debt as cleared
+            currentDebt.IsCleared = true;
+
+            // Save the updated debt list to the JSON file
+            SaveDebtsToFile();
+
+            successMessage = $"Debt of {debtAmount} cleared using income!";
+        }
+        else
+        {
+            successMessage = "Insufficient income to clear the debt.";
+        }
+    }
+
+    // Method to save the debt list to the debt.json file using System.Text.Json
+    public void SaveDebtsToFile()
+    {
+        string path = "C:\\Users\\user\\source\\repos\\BisleriumCafe\\debt.json"; // Path to your debts file
+        var json = JsonSerializer.Serialize(Management_List.debtList, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(path, json);
+    }
+
+    // Method to calculate total income (you would implement this based on your income data)
+    public double CalculateTotalIncome()
+    {
+        // For now, we are using Management_List to simulate income, adjust it as per actual data
+        double totalIncome = Management_List.incomeList.Sum(income => income.Amount);  // Replace with actual income source
+        return totalIncome;
+    }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Amount": 0,
+    "Tag": null,
+    "Date": "0001-01-01",
+    "Source": null,
+    "Note": null,
+    "IsCleared": true
+  },
+  {
+    "Amount": 500,
+    "Tag": "dd",
+    "Date": "2024-01-01",
+    "Source": "ee",
+    "Note": "thagu sanga rin",
+    "IsCleared": true
+  }
+]

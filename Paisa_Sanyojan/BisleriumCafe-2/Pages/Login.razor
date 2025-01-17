@@ -1,0 +1,147 @@
+﻿@page "/"
+@using BisleriumCafe.Services
+@inject NavigationManager NavManager
+@inject LoginService LoginService
+
+
+<div class="main-content">
+    <h1>Paisa Sanyojan</h1>
+    <p class="tagline">"Bachat Garam, Paisa Jogam"</p>
+    <div class="login-form">
+        <h2>Welcome Back!</h2>
+        <p>Let's sign you in</p>
+        <form>
+            <input type="text" @bind="username" placeholder="Username" required>
+            <input type="password" @bind="password" placeholder="Password" required>
+            <select @bind="currencyType" required>
+                <option value="" disabled selected>Currency Type</option>
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <button type="button" @onclick="loginpage" class="login-button">Login to Continue</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6; /* Neutral background for desktop */
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #4a4a4a;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        font-style: italic;
+        color: #6b6b6b;
+    }
+
+    .login-form {
+        background: #ffffff;
+        padding: 20px 30px;
+        border-radius: 5px; /* Slight rounding for smoother corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px; /* Matches earlier dimensions */
+        margin: 0 auto;
+        text-align: left;
+    }
+
+        .login-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .login-form p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Keeps form elements aligned with spacing */
+    }
+
+    input,
+    select {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        color: #333;
+        outline: none;
+        background: #f9f9f9;
+    }
+
+        input:focus,
+        select:focus {
+            border-color: #0078d4;
+            box-shadow: 0 0 5px rgba(0, 120, 212, 0.4);
+        }
+
+    .login-button {
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background: #0078d4;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .login-button:hover {
+            background: #005a9e;
+        }
+
+        .login-button:active {
+            background: #00447c;
+        }
+</style>
+
+@code {
+    string username;
+    string password;
+    string currencyType;
+
+    public async Task loginpage()
+    {
+        // Asynchronous login check
+        bool loginSuccessful = await LoginService.LogIn(username, password, currencyType);
+
+        if (loginSuccessful)
+        {
+            // Loading data from JSON
+            Management_List.incomeList = jsonController.GetDataFromJsonFile<incomes>(jsonController.IncomeFile);
+            Management_List.expenditureList = jsonController.GetDataFromJsonFile<expenditure>(jsonController.ExpensesFile);
+            Management_List.debtList = jsonController.GetDataFromJsonFile<debt>(jsonController.DebtFile);
+            Management_List.tgs = jsonController.GetDataFromJsonFile<tg>(jsonController.TagFile);
+
+            // After successful login, navigate to the home page
+            NavManager.NavigateTo("/Home");
+        }
+        else
+        {
+            // Handle login failure (optional)
+            Console.WriteLine("Login failed");
+        }
+    }
+}

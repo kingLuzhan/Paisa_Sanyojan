@@ -1,0 +1,473 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\pages\\debt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:pages\\debt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\management_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\management_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\debt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\debt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\pages\\expenditure.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:pages\\expenditure.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\income.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:income.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\tag.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:tag.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\pages\\tags.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:pages\\tags.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\controller\\jsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:controller\\jsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\tg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\tg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\pages\\income.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:pages\\income.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\incomes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\incomes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:services\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\expenditure.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:expenditure.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\debt.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:debt.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\expenditure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\expenditure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\model\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:model\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\user.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:user.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\utils\\formutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:utils\\formutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|c:\\users\\user\\source\\repos\\bisleriumcafe\\services\\iformfactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1770C409-065B-4036-8135-B6B9F7DBB432}|BisleriumCafe.csproj|solutionrelative:services\\iformfactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "tg.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\tg.cs",
+              "RelativeDocumentMoniker": "Model\\tg.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\tg.cs",
+              "RelativeToolTip": "Model\\tg.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T06:13:04.073Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Home.razor",
+              "RelativeToolTip": "Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T06:36:10.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Login.razor",
+              "RelativeToolTip": "Pages\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T06:12:54.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "tag.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\tag.json",
+              "RelativeDocumentMoniker": "tag.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\tag.json",
+              "RelativeToolTip": "tag.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-16T18:08:13.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "income.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\income.json",
+              "RelativeDocumentMoniker": "income.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\income.json",
+              "RelativeToolTip": "income.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-16T17:43:39.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Debt.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Debt.razor",
+              "RelativeDocumentMoniker": "Pages\\Debt.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Debt.razor",
+              "RelativeToolTip": "Pages\\Debt.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T07:06:05.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Expenditure.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Expenditure.razor",
+              "RelativeDocumentMoniker": "Pages\\Expenditure.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Expenditure.razor",
+              "RelativeToolTip": "Pages\\Expenditure.razor",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAIwAoBAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T17:08:28.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "debt.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\debt.cs",
+              "RelativeDocumentMoniker": "Model\\debt.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\debt.cs",
+              "RelativeToolTip": "Model\\debt.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T17:42:27.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T21:02:18.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T14:44:21.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "jsonController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Controller\\jsonController.cs",
+              "RelativeDocumentMoniker": "Controller\\jsonController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Controller\\jsonController.cs",
+              "RelativeToolTip": "Controller\\jsonController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T07:02:15.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Management_List.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\Management_List.cs",
+              "RelativeDocumentMoniker": "Model\\Management_List.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\Management_List.cs",
+              "RelativeToolTip": "Model\\Management_List.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAIwE4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T07:23:02.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Tags.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Tags.razor",
+              "RelativeDocumentMoniker": "Pages\\Tags.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Tags.razor",
+              "RelativeToolTip": "Pages\\Tags.razor",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAuwL0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T05:37:51.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "incomes.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\incomes.cs",
+              "RelativeDocumentMoniker": "Model\\incomes.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\incomes.cs",
+              "RelativeToolTip": "Model\\incomes.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T16:56:58.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Services\\LoginService.cs",
+              "RelativeDocumentMoniker": "Services\\LoginService.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Services\\LoginService.cs",
+              "RelativeToolTip": "Services\\LoginService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T20:33:05.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Income.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Income.razor",
+              "RelativeDocumentMoniker": "Pages\\Income.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Pages\\Income.razor",
+              "RelativeToolTip": "Pages\\Income.razor",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAuwPoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T06:25:45.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "expenditure.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\expenditure.cs",
+              "RelativeDocumentMoniker": "Model\\expenditure.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\expenditure.cs",
+              "RelativeToolTip": "Model\\expenditure.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T06:13:01.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Services\\TransactionService.cs",
+              "RelativeDocumentMoniker": "Services\\TransactionService.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Services\\TransactionService.cs",
+              "RelativeToolTip": "Services\\TransactionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T20:47:17.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "debt.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\debt.json",
+              "RelativeDocumentMoniker": "debt.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\debt.json",
+              "RelativeToolTip": "debt.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-16T17:43:32.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\Users.cs",
+              "RelativeDocumentMoniker": "Model\\Users.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\Users.cs",
+              "RelativeToolTip": "Model\\Users.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T06:13:05.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "expenditure.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\expenditure.json",
+              "RelativeDocumentMoniker": "expenditure.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\expenditure.json",
+              "RelativeToolTip": "expenditure.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-16T17:43:37.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\Transaction.cs",
+              "RelativeDocumentMoniker": "Model\\Transaction.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Model\\Transaction.cs",
+              "RelativeToolTip": "Model\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T15:44:22.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FormUtils.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Utils\\FormUtils.cs",
+              "RelativeDocumentMoniker": "Utils\\FormUtils.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Utils\\FormUtils.cs",
+              "RelativeToolTip": "Utils\\FormUtils.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwC8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T07:29:15.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "user.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\user.json",
+              "RelativeDocumentMoniker": "user.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\user.json",
+              "RelativeToolTip": "user.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-16T07:02:36.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\_Imports.razor",
+              "RelativeDocumentMoniker": "_Imports.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\_Imports.razor",
+              "RelativeToolTip": "_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T06:13:37.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Routes.razor",
+              "RelativeDocumentMoniker": "Routes.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Routes.razor",
+              "RelativeToolTip": "Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T06:14:07.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IFormFactor.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Services\\IFormFactor.cs",
+              "RelativeDocumentMoniker": "Services\\IFormFactor.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\BisleriumCafe\\Services\\IFormFactor.cs",
+              "RelativeToolTip": "Services\\IFormFactor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T06:12:38.224Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
